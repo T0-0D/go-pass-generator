@@ -2,6 +2,13 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"strconv"
+	"time"
+)
+
+var (
+	rs1Letters []rune = []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
 )
 
 func main() { // TODO: OD
@@ -28,8 +35,21 @@ func main() { // TODO: OD
 	fmt.Println(passwordMaker(pass_length, birth))
 }
 
-func passwordMaker(pass_length int, birth string) string {
-	// TODO: RYOMA
-	// パスワードを生成する！
-	return "PASSWORD"
+func passwordMaker(pass_length int, birth int) string {
+
+	// ランダム関数の初期化
+	rand.Seed(time.Now().UnixNano())
+	var password []rune
+
+	// ランダムな文字を一個一個入れていく
+	for i := 0; i < pass_length; i++ {
+		// appendは配列に要素を追加する、したものを再代入する
+		password = append(password, rs1Letters[rand.Intn(len(rs1Letters))])
+	}
+
+	// もし最初の文字が大文字じゃなかったら大文字にする
+	if password[0] <= 'A' || password[0] >= 'Z' {
+		password[0] = rs1Letters[rand.Intn(26)]
+	}
+	return string(password) + strconv.Itoa(birth)
 }
