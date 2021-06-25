@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"strconv"
 	"time"
 )
 
@@ -24,7 +23,7 @@ func main() {
 	// passwordMaker(文字数, 誕生日)を呼び出してパスワードを生成し、表示する。
 }
 
-func passwordMaker(pass_length int, birth int) string {
+func passwordMaker(pass_length int, birth string) string {
 
 	// ランダム関数の初期化
 	rand.Seed(time.Now().UnixNano())
@@ -40,5 +39,5 @@ func passwordMaker(pass_length int, birth int) string {
 	if password[0] <= 'A' || password[0] >= 'Z' {
 		password[0] = rs1Letters[rand.Intn(26)]
 	}
-	return string(password) + strconv.Itoa(birth)
+	return string(password) + birth
 }
