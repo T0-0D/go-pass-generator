@@ -1,5 +1,5 @@
 # go-pass-generator
-a normal password generator written in golang
+a normal password generator written in golang w/ jumang4223
 
 
 ## できること
