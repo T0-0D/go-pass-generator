@@ -11,7 +11,7 @@ var (
 )
 
 func main() { // TODO: OD
-	var pass_length int = 13
+	var pass_length int = int(^uint(0) >> 1)
 	var birth string
 
 	// welcome文を作る
