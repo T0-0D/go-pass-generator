@@ -25,7 +25,7 @@ func main() { // TODO: OD
 
 	// 誕生日の4桁数字を受け取る: int
 	for len(birth) != 4 {
-		fmt.Print("Type your birthday in 4 letter (ex. Jan 3rd -> 0103): ")
+		fmt.Print("Type your birthday in 4 letters (ex. Jan 3rd -> 0103): ")
 		fmt.Scan(&birth)
 	}
 
